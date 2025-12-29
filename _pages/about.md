@@ -27,9 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a second year bioinformatics PhD student elucidating the impact of m6A dysregulation in breast cancer, mainly through the application of Oxford Nanopore Direct RNA sequencing to clinical samples. 
+I am a second year bioinformatics PhD student investigating the impact of m6A dysregulation in breast cancer, mainly through the application of Oxford Nanopore Direct RNA sequencing to clinical samples. 
 
 Prior to my current research I have worked in a variety of roles, including at a data science startup during my master (Unicle biomedical data science), and as a data analyst at Google. 
-
-I seek to leave to world a better place than I left it and learn as much as I can along the way! 
 
