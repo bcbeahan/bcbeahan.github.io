@@ -11,7 +11,7 @@ profile:
   more_info: >
     <p>Institute Jules Bordet</p>
     <p>90 Rue Meylemeersch, Level 5</p>
-    <p>1070 Brussels</p>
+    <p>1070 Brussels, Belgium</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
