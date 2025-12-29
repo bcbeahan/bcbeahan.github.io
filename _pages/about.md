@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: "It's tough to make predictions, especially about the future." -Yogi Berra
+subtitle: It's tough to make predictions, especially about the future. -Yogi Berra
 
 profile:
   align: right
