@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. "It's tough to make predictions, especially about the future." -Yogi Berra
+subtitle: "It's tough to make predictions, especially about the future." -Yogi Berra
 
 profile:
   align: right
@@ -27,4 +27,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am a second year bioinformatics PhD student elucidating the impact of m6A dysregulation in breast cancer, mainly through the application of Oxford Nanopore Direct RNA sequencing to clinical samples. 
+
+Prior to my current research I have worked in a variety of roles, including at a data science startup during my master (Unicle biomedical data science), and as a data analyst at Google. 
+
+I seek to leave to world a better place than I left it and learn as much as I can along the way! 
+
