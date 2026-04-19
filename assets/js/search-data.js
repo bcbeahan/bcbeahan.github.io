@@ -440,6 +440,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "books-war-in-human-civilization",
+          title: 'War in Human Civilization',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/war_in_human_civilization/";
             },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
