@@ -1,8 +1,9 @@
----
+﻿---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2022-05-29 00:00:00+0000
 inline: true
 related_posts: false
+published: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+This is a sample announcement. You can use it to highlight an event, a paper, or anything else in your site.
