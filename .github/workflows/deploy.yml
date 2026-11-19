@@ -90,7 +90,19 @@ jobs:
           value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
+          # ImageMagick only generates responsive image sizes. Ubuntu's package
+          # mirrors sometimes return 503s, so retry, and if it still can't be
+          # installed, build without responsive images instead of failing.
+          if ! command -v convert >/dev/null; then
+            for attempt in 1 2 3; do
+              sudo apt-get update -o Acquire::Retries=3 && sudo apt-get install -y -o Acquire::Retries=3 imagemagick && break
+              sleep 20
+            done
+          fi
+          if ! command -v convert >/dev/null; then
+            echo "::warning::ImageMagick unavailable; building without responsive images"
+            sed -i '/^imagemagick:/,/^[^ ]/ s/^  enabled: true/  enabled: false/' _config.yml
+          fi
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
