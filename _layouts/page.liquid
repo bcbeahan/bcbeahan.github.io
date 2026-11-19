@@ -9,9 +9,24 @@ layout: default
 {% endif %}
 
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
+  <header class="post-header{% if page.header_logos %} post-header--with-logos{% endif %}">
+    <div class="post-header__text">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-description">{{ page.description }}</p>
+    </div>
+    {% if page.header_logos %}
+      <div class="header-logos">
+        {% for logo in page.header_logos %}
+          <a href="{{ logo.url }}" target="_blank" rel="noopener" title="{{ logo.name }}" class="header-logos__item {{ logo.class }}">
+            {%- if logo.img -%}
+              <img src="{{ logo.img | relative_url }}" alt="{{ logo.name }}">
+            {%- else -%}
+              {{ logo.text }}
+            {%- endif -%}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
   </header>
 
   <article>

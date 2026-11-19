@@ -1,9 +1,9 @@
 ---
 layout: page
-title: other
+title: projects
 permalink: /projects/
 description: Side projects outside my PhD.
-nav: true
+nav: false # listed under the "other" dropdown (_pages/other.md)
 nav_order: 6
 display_categories: [work]
 horizontal: false

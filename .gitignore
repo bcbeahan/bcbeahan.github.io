@@ -12,3 +12,6 @@ node_modules/
 vendor
 .idea
 .venv
+
+# Private material that must never be published (e.g. unpublished PhD figures)
+_private/

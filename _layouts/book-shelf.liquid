@@ -7,7 +7,9 @@ layout: page
   One card per book: cover, title/author, a short `summary`, and a progress bar.
   Book front matter fields used here:
     status:   reading | finished | queued | paused | abandoned
-    progress: 0-100 (percent read; finished books show 100 automatically)
+    page / pages: current page and total pages (preferred; the % is computed)
+    progress: 0-100 (percent read, used when page/pages are not given)
+    Finished books always show 100%.
     summary:  one or two sentences on what the book is about
   Books are listed by status: reading first, then queued, paused, finished, abandoned.
 {% endcomment %}
@@ -22,6 +24,8 @@ layout: page
       {% for book in group %}
         {% if status == 'finished' %}
           {% assign pct = 100 %}
+        {% elsif book.page and book.pages %}
+          {% assign pct = book.page | times: 100 | divided_by: book.pages | at_least: 0 | at_most: 100 %}
         {% else %}
           {% assign pct = book.progress | default: 0 | at_least: 0 | at_most: 100 %}
         {% endif %}
@@ -57,7 +61,13 @@ layout: page
               <div class="book-progress__track">
                 <div class="book-progress__fill book-progress__fill--{{ status }}" style="width: {{ pct }}%"></div>
               </div>
-              <span class="book-progress__label">{{ pct }}%</span>
+              <span class="book-progress__label">
+                {%- if status != 'finished' and book.page and book.pages -%}
+                  p. {{ book.page }} / {{ book.pages }} · {{ pct }}%
+                {%- else -%}
+                  {{ pct }}%
+                {%- endif -%}
+              </span>
             </div>
           </div>
         </article>

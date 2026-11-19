@@ -5,9 +5,20 @@ permalink: /phd/
 description: m6A dysregulation in breast cancer, studied with Oxford Nanopore Direct RNA sequencing
 nav: true
 nav_order: 2
+header_logos:
+  - { name: "Université libre de Bruxelles", url: "https://www.ulb.be/", img: /assets/img/phd/logos/ulb.svg }
+  - { name: "Vrije Universiteit Brussel", url: "https://www.vub.be/", img: /assets/img/phd/logos/vub.svg, class: header-logos__item--vub }
+  - { name: "(IB)² Interuniversity Institute of Bioinformatics in Brussels", url: "https://ibsquare.be/", img: /assets/img/phd/logos/ib2.png }
+  - { name: "Télévie", url: "https://www.televie.be/", img: /assets/img/phd/logos/televie.png, class: header-logos__item--televie }
+  - {
+      name: "Fonds de la Recherche Scientifique (F.R.S.-FNRS)",
+      url: "https://www.frs-fnrs.be/",
+      img: /assets/img/phd/logos/fnrs.png,
+      class: header-logos__item--fnrs,
+    }
 ---
 
-<!-- TODO(Brendan): later, add cohort / methods detail and an Aims section. -->
+<!-- TODO(Brendan): later, add an Aims section. -->
 
 I am a bioinformatics PhD student at the **Institut Jules Bordet** in Brussels, enrolled jointly at the **Vrije Universiteit Brussel** and the **Université libre de Bruxelles**. I started in March 2024.
 
@@ -31,3 +42,7 @@ I apply **Oxford Nanopore Direct RNA sequencing** to clinical samples. Because i
 ## Talks & posters
 
 - **Flemish Nanopore Day 2026** (April 2026): flash talk and poster.
+
+## Affiliations & funding
+
+My PhD is a joint ULB–VUB doctorate, and it is funded by a **Télévie** grant from the **F.R.S.-FNRS**.
