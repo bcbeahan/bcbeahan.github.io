@@ -37,14 +37,35 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "nav-other",
-          title: "other",
-          description: "Side projects outside my PhD.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
-        },{id: "post-plantbot-v0-1-planning-hardware-amp-learning",
+        },{id: "dropdown-projects",
+              title: "projects",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/projects/";
+              },
+            },{id: "dropdown-guitar",
+              title: "guitar",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/guitar/";
+              },
+            },{id: "dropdown-cooking",
+              title: "cooking",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/cooking/";
+              },
+            },{id: "dropdown-french",
+              title: "french",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/french/";
+              },
+            },{id: "post-plantbot-v0-1-planning-hardware-amp-learning",
         
           title: "PlantBot v0.1 — Planning, Hardware &amp; Learning",
         
@@ -77,7 +98,27 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "books-war-in-human-civilization",
+      },{id: "books-the-biology-of-cancer-3rd-edition",
+          title: 'The Biology of Cancer (3rd edition)',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/biology_of_cancer/";
+            },},{id: "books-breakneck-china-39-s-quest-to-engineer-the-future",
+          title: 'Breakneck: China&amp;#39;s Quest to Engineer the Future',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/breakneck/";
+            },},{id: "books-fitzpatrick-39-s-war",
+          title: 'Fitzpatrick&amp;#39;s War',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/fitzpatricks_war/";
+            },},{id: "books-the-passion-of-the-western-mind",
+          title: 'The Passion of the Western Mind',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/passion_of_the_western_mind/";
+            },},{id: "books-war-in-human-civilization",
           title: 'War in Human Civilization',
           description: "",
           section: "Books",handler: () => {
