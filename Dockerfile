@@ -27,8 +27,12 @@ RUN apt-get update -y && \
         git \
         imagemagick \
         inotify-tools \
+        libffi-dev \
+        libxml2-dev \
+        libxslt1-dev \
         locales \
         nodejs \
+        pkg-config \
         procps \
         python3-pip \
         zlib1g-dev && \
@@ -62,6 +66,7 @@ WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
 RUN gem install --no-document jekyll bundler
+RUN bundle config set --local build.nokogiri --use-system-libraries
 RUN bundle install --no-cache
 
 EXPOSE 8080

@@ -21,6 +21,12 @@ manage_gemfile_lock() {
 
 start_jekyll() {
     manage_gemfile_lock
+
+    if ! bundle check >/dev/null 2>&1; then
+        echo "Bundler dependencies are missing; installing project gems before starting Jekyll..."
+        bundle install --no-cache
+    fi
+
     bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
 }
 
