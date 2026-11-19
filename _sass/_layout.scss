@@ -38,6 +38,16 @@ body.sticky-bottom-footer {
   }
 }
 
+// On phones the photo is full width; Bootstrap's float-right (!important) would
+// otherwise squeeze the intro text into a one-word-wide column beside it.
+@media (max-width: 575.98px) {
+  .profile.float-right,
+  .profile.float-left {
+    float: none !important;
+    margin: 0 0 1.5rem !important;
+  }
+}
+
 // TODO: redefine content layout.
 
 /******************************************************************************
@@ -50,4 +60,561 @@ body.sticky-bottom-footer {
 * Projects
 *****************************************************************************/
 
-// TODO: redefine projects layout.
+.home-intro {
+  margin: 1rem 0 2.5rem;
+}
+
+.home-intro__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--global-theme-color);
+}
+
+.home-intro h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 4vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+
+.home-intro .lead {
+  max-width: 62ch;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  // Full text color: the theme's "light" grey is too faint on the dark background.
+  color: var(--global-text-color);
+}
+
+// Address lines under the photo: one per line, even on narrow screens.
+.profile .more-info {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--global-text-color);
+
+  p {
+    display: block;
+  }
+}
+
+.home-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+// The theme's Material buttons (uppercase, drop shadow, fixed colors) override
+// plain .btn rules, so these need the extra specificity to win.
+.home-intro .home-cta .btn {
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  box-shadow: none;
+}
+
+.home-intro .home-cta .btn-primary {
+  background-color: var(--global-theme-color) !important;
+  border: 1px solid var(--global-theme-color);
+  color: #fff;
+}
+
+.home-intro .home-cta .btn-secondary {
+  background-color: transparent !important;
+  border: 1px solid rgba(127, 140, 153, 0.45);
+  color: var(--global-text-color);
+}
+
+.home-intro .home-cta .btn-secondary:hover {
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
+
+// Start the project grid below the floated profile photo so the cards get the full width.
+.featured-projects {
+  clear: both;
+  margin-bottom: 2.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.section-header a {
+  font-size: 0.9rem;
+  color: var(--global-theme-color);
+}
+
+.section-header--spaced {
+  margin-top: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem 1.2rem 1.1rem;
+  border: 1px solid rgba(127, 140, 153, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(127, 140, 153, 0.35);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+}
+
+.project-card--accent {
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.04), rgba(255, 255, 255, 0));
+}
+
+.project-card__status {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.85rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--global-theme-color);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-card--placeholder .project-card__status {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--global-text-color-light);
+}
+
+.project-card h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.4rem;
+}
+
+.project-card p {
+  flex: 1;
+  margin: 0 0 1rem;
+  color: var(--global-text-color);
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+.project-card a {
+  color: var(--global-theme-color);
+  font-weight: 600;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-list li {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(127, 140, 153, 0.3);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.02);
+  color: var(--global-text-color);
+  opacity: 0.85;
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    display: block;
+  }
+
+  .section-header a {
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+}
+
+/*****************************************************************************
+* Books
+*****************************************************************************/
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.book-card {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(127, 140, 153, 0.25);
+  border-radius: 14px;
+}
+
+.book-card__cover img {
+  width: 96px;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.book-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.book-card__status {
+  align-self: flex-start;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--global-text-color);
+}
+
+.book-card__status--reading {
+  background: rgba(245, 158, 11, 0.18);
+  color: #f59e0b;
+}
+
+.book-card__status--finished {
+  background: rgba(34, 197, 94, 0.18);
+  color: #22c55e;
+}
+
+.book-card h3 {
+  margin: 0.5rem 0 0.15rem;
+  font-size: 1.25rem;
+}
+
+.book-card__author {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--global-text-color);
+  opacity: 0.7;
+}
+
+.book-card__summary {
+  margin: 0 0 0.9rem;
+  line-height: 1.6;
+  color: var(--global-text-color);
+  opacity: 0.9;
+}
+
+.book-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.book-progress__track {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(127, 140, 153, 0.22);
+  overflow: hidden;
+}
+
+.book-progress__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--global-theme-color);
+}
+
+.book-progress__fill--reading {
+  background: #f59e0b;
+}
+
+.book-progress__fill--finished {
+  background: #22c55e;
+}
+
+.book-progress__label {
+  min-width: 3ch;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--global-text-color);
+}
+
+@media (max-width: 575.98px) {
+  .book-card__cover img {
+    width: 72px;
+  }
+}
+
+/*****************************************************************************
+* OMSCS
+*****************************************************************************/
+
+.omscs-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0.5rem 0 2rem;
+
+  p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+.omscs-intro__logo {
+  flex: 0 0 auto;
+  width: 120px;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  border: 1px solid rgba(127, 140, 153, 0.25);
+  border-radius: 14px;
+
+  h3 {
+    margin: 0.6rem 0 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  h3 a {
+    color: var(--global-text-color);
+  }
+
+  h3 a:hover {
+    color: var(--global-theme-color);
+  }
+
+  p {
+    flex: 1;
+    margin: 0 0 1rem;
+    line-height: 1.6;
+    color: var(--global-text-color);
+    opacity: 0.85;
+  }
+}
+
+.course-card--upcoming {
+  border-style: dashed;
+}
+
+.course-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--global-text-color);
+  opacity: 0.9;
+}
+
+.course-card__status {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+// Georgia Tech gold for completed, neutral for upcoming.
+.course-card__status--completed {
+  background: rgba(179, 163, 105, 0.2);
+  color: #b3a369;
+}
+
+.course-card__status--upcoming {
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--global-text-color);
+}
+
+@media (max-width: 575.98px) {
+  .omscs-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .omscs-intro__logo {
+    width: 96px;
+  }
+}
+
+/*****************************************************************************
+* About header: decorative single-stranded RNA
+*****************************************************************************/
+
+.post-header {
+  position: relative;
+}
+
+// Sits in the empty space to the right of the name; fades out towards the
+// name so the text always stays readable.
+.rna-strand {
+  position: absolute;
+  top: -1.5rem;
+  right: 0;
+  width: 46%;
+  height: calc(100% + 3rem);
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 30%);
+}
+
+.post-header .post-title,
+.post-header .desc {
+  position: relative;
+  z-index: 1;
+}
+
+// On phones the name fills the width, so keep the strand faint behind it.
+@media (max-width: 575.98px) {
+  .rna-strand {
+    width: 100%;
+    opacity: 0.35;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/*****************************************************************************
+* PhD: nanopore animation (_includes/nanopore-animation.html)
+*****************************************************************************/
+
+.nanopore-figure {
+  margin: 1.5rem 0 2rem;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  figcaption {
+    max-width: 680px;
+    margin: 0.75rem auto 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--global-text-color);
+    opacity: 0.8;
+  }
+
+  .np-label {
+    font-size: 12px;
+    fill: var(--global-text-color);
+    opacity: 0.75;
+  }
+
+  .np-label--small {
+    font-size: 10px;
+  }
+
+  .np-membrane {
+    fill: rgba(127, 140, 153, 0.22);
+    stroke: rgba(127, 140, 153, 0.45);
+    stroke-width: 1;
+  }
+
+  .np-pore {
+    fill: var(--global-theme-color);
+    opacity: 0.35;
+  }
+
+  .np-motor {
+    fill: var(--global-theme-color);
+    opacity: 0.22;
+    stroke: var(--global-theme-color);
+    stroke-opacity: 0.6;
+  }
+
+  .np-strand {
+    fill: none;
+    stroke: var(--global-theme-color);
+    stroke-width: 1.5;
+    opacity: 0.35;
+  }
+
+  .np-nt {
+    fill: var(--global-theme-color);
+  }
+
+  .np-m6a {
+    fill: #f0a43a;
+  }
+
+  .np-m6a-glow {
+    fill: #f0a43a;
+    opacity: 0.25;
+  }
+
+  .np-panel {
+    fill: rgba(127, 140, 153, 0.06);
+    stroke: rgba(127, 140, 153, 0.35);
+  }
+
+  .np-trace {
+    fill: none;
+    stroke: var(--global-theme-color);
+    stroke-width: 1.4;
+  }
+
+  .np-trace-m6a {
+    fill: none;
+    stroke: #f0a43a;
+    stroke-width: 2;
+  }
+}

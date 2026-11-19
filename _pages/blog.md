@@ -2,7 +2,8 @@
 layout: default
 permalink: /blog/
 title: blog
-nav: true
+nav: false
+published: false # blog hidden; posts are used only as PlantBot log entries
 nav_order: 1
 pagination:
   enabled: true

@@ -1,0 +1,49 @@
+---
+layout: page
+permalink: /projects/plantbot/
+title: PlantBot
+description: An engineering journal for a small embedded plant-monitoring and watering prototype.
+---
+
+<div class="pb-hero">
+  <div><span class="pb-badge">Work in progress</span><span class="pb-kicker">Embedded systems · IoT · learning project</span></div>
+  <h1>PlantBot</h1>
+  <p class="lead">A versioned engineering journal following one small system from physical measurement, through software decisions, to eventual physical actuation.</p>
+</div>
+
+PlantBot is currently at the **planning, procurement, and learning** stage. I started it to work across electronics, sensors, embedded programming, data collection, power, and control logic without hiding the unfinished parts of the process. The long-term idea is modular plant monitoring and eventually simple watering automation; no physical prototype or working watering system exists yet.
+
+## Current direction
+
+The first build is deliberately narrow: one plant, one capacitive soil-moisture sensor, one ESP32, one pump, simple wiring, and basic logging. I want to understand each layer individually before adding more sensors, networking, dashboards, or sophisticated control.
+
+## Development Log
+
+<div class="pb-log-grid">
+  <a class="pb-log-card pb-log-card--current" href="{{ '/projects/plantbot/development-log/v0-1/' | relative_url }}">
+    <div class="pb-log-top"><span class="pb-version">v0.1</span><span class="pb-status">Current</span></div>
+    <h3>Planning, Hardware &amp; Learning</h3>
+    <time datetime="2026-08-23">August 23, 2026</time>
+    <p>Why I started, the verified first hardware order, planned architecture, reading sequence, and the questions I want the first prototype to answer.</p>
+    <span class="pb-link">Read development entry →</span>
+  </a>
+  <div class="pb-log-card pb-log-card--future">
+    <div class="pb-log-top"><span class="pb-version">v0.2</span><span class="pb-status pb-status--muted">Next milestone</span></div>
+    <h3>First Sensor Prototype</h3>
+    <p>Reserved for the first physical build: component inventory, ESP32 setup, sensor wiring, raw readings, and prototype photographs.</p>
+  </div>
+</div>
+
+<p class="pb-note"><strong>Repository:</strong> A dedicated PlantBot code repository will be established as part of v0.2, once there is a first prototype worth sharing.</p>
+
+<style>
+.pb-hero{margin:0 0 2.5rem;padding:1.5rem 0 1.75rem;border-bottom:1px solid var(--global-divider-color)}
+.pb-hero h1{margin:.65rem 0}.pb-badge,.pb-version,.pb-status{display:inline-flex;align-items:center;border-radius:999px;padding:.3rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.pb-badge,.pb-status{background:color-mix(in srgb,var(--global-theme-color) 14%,transparent);color:var(--global-theme-color)}
+.pb-kicker{margin-left:.65rem;color:var(--global-text-color-light);font-size:.85rem}.pb-log-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1rem;margin:1.25rem 0 2rem}
+.pb-log-card{display:block;padding:1.35rem;border:1px solid var(--global-divider-color);border-radius:1rem;background:var(--global-card-bg-color);color:var(--global-text-color)!important;text-decoration:none!important;transition:transform .15s ease,border-color .15s ease}
+a.pb-log-card:hover{transform:translateY(-2px);border-color:var(--global-theme-color)}.pb-log-card h3{margin:.9rem 0 .25rem}.pb-log-card time{font-size:.88rem;color:var(--global-text-color-light)}.pb-log-card p{margin:.85rem 0}
+.pb-log-top{display:flex;justify-content:space-between;gap:.75rem}.pb-version{background:var(--global-theme-color);color:#fff}.pb-status--muted{background:color-mix(in srgb,var(--global-text-color) 8%,transparent);color:var(--global-text-color-light)}
+.pb-log-card--future{border-style:dashed}.pb-link{color:var(--global-theme-color);font-weight:600}.pb-note{padding:1rem 1.1rem;border-left:3px solid var(--global-theme-color);background:color-mix(in srgb,var(--global-theme-color) 7%,transparent)}
+@media(max-width:520px){.pb-kicker{display:block;margin:.65rem 0 0}.pb-log-top{align-items:flex-start;flex-direction:column}}
+</style>

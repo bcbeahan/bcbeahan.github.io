@@ -2,30 +2,41 @@
 layout: about
 title: about
 permalink: /
-subtitle: "\"It's tough to make predictions, especially about the future.\" — Yogi Berra"
+nav: false # the theme always adds the About link itself
+subtitle: "Bioinformatics · Computational Biology · Software Engineering"
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   more_info: >
-    <p>Institute Jules Bordet</p>
+    <p>Institut Jules Bordet</p>
     <p>90 Rue Meylemeersch, Level 5</p>
     <p>1070 Brussels, Belgium</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false
+social: true
+rna_strand: true # decorative single-stranded RNA behind the name (assets/js/rna-strand.js)
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
+  scrollable: true
+  limit: 5
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
+  scrollable: true
+  limit: 3
 ---
 
-I am a second year bioinformatics PhD student investigating the impact of m6A dysregulation in breast cancer, mainly through the application of Oxford Nanopore Direct RNA sequencing to clinical samples. 
-
+<div class="home-intro">
+  <div class="home-intro__content">
+    <p class="lead">I am a third-year bioinformatics PhD student investigating the impact of m6A dysregulation in breast cancer, mainly through the application of Oxford Nanopore Direct RNA sequencing to clinical samples.</p>
+    <p class="lead">Alongside my research, I build software and tools that make analysis workflows more practical and reproducible.</p>
+    <div class="home-cta">
+      <a class="btn btn-primary" href="{{ '/phd/' | relative_url }}">PhD research</a>
+      <a class="btn btn-secondary" href="{{ '/cv/' | relative_url }}">CV</a>
+      <a class="btn btn-secondary" href="https://github.com/bcbeahan" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</div>
