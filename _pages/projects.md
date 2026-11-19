@@ -1,10 +1,10 @@
 ---
 layout: page
-title: projects
+title: other
 permalink: /projects/
-description: Computational biology, software engineering, and systems work.
+description: Side projects outside my PhD.
 nav: true
-nav_order: 2
+nav_order: 6
 display_categories: [work]
 horizontal: false
 ---

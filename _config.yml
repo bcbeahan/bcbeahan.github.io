@@ -7,13 +7,13 @@ first_name: Brendan
 middle_name: Christopher
 last_name: Beahan
 contact_note: >
-  Computational biology, practical software, and embedded systems.
+  Bioinformatics, computational biology, and software engineering.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Brendan Christopher Beahan is a computational biologist and builder working at the intersection of bioinformatics, software engineering, and IoT.
+  Brendan Christopher Beahan is a bioinformatics PhD student working at the intersection of computational biology and software engineering.
 footer_text: >
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: Brendan Beahan, bioinformatics, computational biology, software engineering, IoT, plant monitoring, nanopore, embedded systems, personal portfolio
+keywords: Brendan Beahan, bioinformatics, computational biology, software engineering, nanopore, direct RNA sequencing, m6A, personal portfolio
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🧬 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -46,7 +46,8 @@ repo_trophies:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
+show_footer: false # hides the copyright / "Built with" footer band entirely
 search_enabled: true
 socials_in_search: true
 posts_in_search: true

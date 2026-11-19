@@ -3,47 +3,57 @@ layout: page
 ---
 {{ content }}
 
-{% if page.collection and page.collection.size > 0 %}
-  {% assign collection = site[page.collection] %}
-  {% if collection and collection.size > 0 %}
-    {% for item in collection reversed %}
-      {% assign current_year = item.date | date: '%Y' %}
-      {% if current_year != year %}
-        {% unless forloop.first %}
-          </ul>
-        {% endunless %}
-        <h1 id="y{{item.date | date: "%Y"}}">
-          <a href="{{ current_year | prepend: '/books/' | relative_url }}">{{ current_year }}</a>
-        </h1>
-        <ul>
-          {% assign year = current_year %}
-      {% endif %}
+{% comment %}
+  One card per book: cover, title/author, a short `summary`, and a progress bar.
+  Book front matter fields used here:
+    status:   reading | finished | queued | paused | abandoned
+    progress: 0-100 (percent read; finished books show 100 automatically)
+    summary:  one or two sentences on what the book is about
+  Books are listed by status: reading first, then queued, paused, finished, abandoned.
+{% endcomment %}
 
-      <figure class="cover">
-        <a class="cover-link" href="{{ item.url | relative_url }}">
-          {% if item.cover %}
-            <img alt="{{ item.title }} cover" src="{{ item.cover | prepend: page.covers | relative_url }}" style="height:200px">
-          {% elsif item.olid %}
-            <img alt="{{ item.title }} cover" src="http://covers.openlibrary.org/b/olid/{{ item.olid }}-L.jpg?default=false" style="height:200px">
-          {% elsif item.isbn %}
-            <img alt="{{ item.title }} cover" src="http://covers.openlibrary.org/b/isbn/{{ item.isbn }}-L.jpg?default=false" style="height:200px">
-          {% endif %}
-          {% if item.status %}
-            {% assign statuses = 'abandoned,finished,interested,paused,queued,reading,reread' | split: ',' %}
-            {% assign status = item.status | downcase | strip %}
-            {% if statuses contains status %}
-              <figcaption class="{{ status | downcase }}">{{ status | upcase }}</figcaption>
-            {% else %}
-              <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
+{% if page.collection %}
+  {% assign books = site[page.collection] %}
+  {% assign status_order = 'reading,queued,paused,finished,abandoned' | split: ',' %}
+
+  <div class="book-list">
+    {% for status in status_order %}
+      {% assign group = books | where: 'status', status %}
+      {% for book in group %}
+        {% if status == 'finished' %}
+          {% assign pct = 100 %}
+        {% else %}
+          {% assign pct = book.progress | default: 0 | at_least: 0 | at_most: 100 %}
+        {% endif %}
+
+        <article class="book-card">
+          <div class="book-card__cover">
+            {% if book.cover %}
+              <img alt="{{ book.title }} cover" src="{{ book.cover | relative_url }}" loading="lazy">
+            {% elsif book.isbn %}
+              <img alt="{{ book.title }} cover" src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-L.jpg?default=false" loading="lazy">
             {% endif %}
-          {% else %}
-            <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
-          {% endif %}
-        </a>
-      </figure>
-      {% if forloop.last %}
-        </ul>
-      {% endif %}
+          </div>
+
+          <div class="book-card__body">
+            <span class="book-card__status book-card__status--{{ status }}">{{ status }}</span>
+            <h3>{{ book.title }}</h3>
+            <p class="book-card__author">
+              {{ book.author }}{% if book.released %} · {{ book.released }}{% endif %}
+            </p>
+            {% if book.summary %}
+              <p class="book-card__summary">{{ book.summary }}</p>
+            {% endif %}
+
+            <div class="book-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ pct }}" aria-label="Reading progress">
+              <div class="book-progress__track">
+                <div class="book-progress__fill book-progress__fill--{{ status }}" style="width: {{ pct }}%"></div>
+              </div>
+              <span class="book-progress__label">{{ pct }}%</span>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
     {% endfor %}
-  {% endif %}
+  </div>
 {% endif %}

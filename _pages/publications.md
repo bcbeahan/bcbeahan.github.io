@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: publications
 description: Recent work and research outputs.
-nav: true
+nav: false # hidden until there are publications
 nav_order: 3
 ---
 
