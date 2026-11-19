@@ -94,10 +94,8 @@ jobs:
           # mirrors sometimes return 503s, so retry, and if it still can't be
           # installed, build without responsive images instead of failing.
           if ! command -v convert >/dev/null; then
-            for attempt in 1 2 3; do
-              sudo apt-get update -o Acquire::Retries=3 && sudo apt-get install -y -o Acquire::Retries=3 imagemagick && break
-              sleep 20
-            done
+            # capped at ~4 minutes so a broken mirror can't stall the deploy
+            timeout 240 sh -c 'sudo apt-get update -o Acquire::Retries=2 && sudo apt-get install -y -o Acquire::Retries=2 imagemagick' || true
           fi
           if ! command -v convert >/dev/null; then
             echo "::warning::ImageMagick unavailable; building without responsive images"
