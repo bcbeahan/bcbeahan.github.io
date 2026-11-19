@@ -39,13 +39,21 @@ layout: page
             <span class="book-card__status book-card__status--{{ status }}">{{ status }}</span>
             <h3>{{ book.title }}</h3>
             <p class="book-card__author">
-              {{ book.author }}{% if book.released %} · {{ book.released }}{% endif %}
+              {{ book.author -}}
+              {%- if book.released %} · {{ book.released }}{% endif %}
             </p>
             {% if book.summary %}
               <p class="book-card__summary">{{ book.summary }}</p>
             {% endif %}
 
-            <div class="book-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ pct }}" aria-label="Reading progress">
+            <div
+              class="book-progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="{{ pct }}"
+              aria-label="Reading progress"
+            >
               <div class="book-progress__track">
                 <div class="book-progress__fill book-progress__fill--{{ status }}" style="width: {{ pct }}%"></div>
               </div>

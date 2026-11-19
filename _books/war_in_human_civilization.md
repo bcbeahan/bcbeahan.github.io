@@ -10,4 +10,3 @@ status: reading
 progress: 30 # TODO(Brendan): set your real percentage (0-100)
 summary: A sweeping account of why humans fight, tracing war from its evolutionary roots among hunter-gatherers through the rise of states and empires to the modern era.
 ---
-

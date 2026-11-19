@@ -28,9 +28,7 @@
       "location": "Brussels, Belgium",
       "startDate": "2024-03-01",
       "summary": "PhD research on the impact of m6A dysregulation in breast cancer, applying Oxford Nanopore Direct RNA sequencing to clinical samples. Jeschke lab (Applied Cancer Epigenomics and Epitranscriptomics); supervisors Dr. Jana Jeschke and Dr. Catharina Olsen.",
-      "highlights": [
-        "Flash talk and poster, Flemish Nanopore Day 2026"
-      ]
+      "highlights": ["Flash talk and poster, Flemish Nanopore Day 2026"]
     },
     {
       "name": "KU Leuven, Centre of Microbial and Plant Genetics (Computational Systems Biology group)",
@@ -115,9 +113,7 @@
       "studyType": "PhD",
       "area": "Bioinformatics",
       "startDate": "2024-03-01",
-      "courses": [
-        "m6A dysregulation in breast cancer, studied with Oxford Nanopore Direct RNA sequencing"
-      ]
+      "courses": ["m6A dysregulation in breast cancer, studied with Oxford Nanopore Direct RNA sequencing"]
     },
     {
       "institution": "Georgia Institute of Technology, College of Computing",
@@ -127,10 +123,7 @@
       "area": "Computer Science (OMSCS)",
       "startDate": "2025-08-01",
       "endDate": "2028",
-      "courses": [
-        "Machine Learning for Trading (A)",
-        "Game AI (A)"
-      ]
+      "courses": ["Machine Learning for Trading (A)", "Game AI (A)"]
     },
     {
       "institution": "KU Leuven",
@@ -139,10 +132,7 @@
       "area": "Bioinformatics",
       "startDate": "2021-09-01",
       "endDate": "2023-09-01",
-      "courses": [
-        "Graduated Cum Laude",
-        "Thesis: Structural elucidation of phage-steered lysine acetylations in MetK"
-      ]
+      "courses": ["Graduated Cum Laude", "Thesis: Structural elucidation of phage-steered lysine acetylations in MetK"]
     },
     {
       "institution": "The University of North Carolina at Chapel Hill",
@@ -164,37 +154,21 @@
       "area": "Biology, General",
       "startDate": "2011",
       "endDate": "2013",
-      "courses": [
-        "Dean's List, all semesters",
-        "St. Baldrick's pediatric cancer fundraiser \"shavee\""
-      ]
+      "courses": ["Dean's List, all semesters", "St. Baldrick's pediatric cancer fundraiser \"shavee\""]
     }
   ],
   "skills": [
     {
       "name": "Programming & tooling",
-      "keywords": [
-        "Python",
-        "Docker",
-        "Snakemake"
-      ]
+      "keywords": ["Python", "Docker", "Snakemake"]
     },
     {
       "name": "Bioinformatics",
-      "keywords": [
-        "Oxford Nanopore Direct RNA sequencing",
-        "Spatial transcriptomics",
-        "AlphaFold",
-        "Molecular dynamics"
-      ]
+      "keywords": ["Oxford Nanopore Direct RNA sequencing", "Spatial transcriptomics", "AlphaFold", "Molecular dynamics"]
     },
     {
       "name": "Data",
-      "keywords": [
-        "Exploratory data analysis",
-        "Dashboards",
-        "Process automation"
-      ]
+      "keywords": ["Exploratory data analysis", "Dashboards", "Process automation"]
     }
   ],
   "languages": [
